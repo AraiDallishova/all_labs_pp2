@@ -69,6 +69,20 @@ class Player(pygame.sprite.Sprite):
             self.rect.move_ip(-5, 0)
         if self.rect.right < SCREEN_WIDTH and pressed_keys[K_RIGHT]:
             self.rect.move_ip(5, 0)
+        keys = pygame.key.get_pressed()
+        if pressed_keys[K_c]:
+            if self.image == car1:
+                self.image = car2
+            else:
+                self.image = car1 
+
+
+car2 = pygame.image.load(ASSET("Player.png"))
+car1 = pygame.image.load(ASSET("car1.png"))
+
+
+
+
 
 # Coin class with random weights
 class Coin(pygame.sprite.Sprite):
